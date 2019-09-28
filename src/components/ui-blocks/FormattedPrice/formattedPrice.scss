@@ -1,0 +1,21 @@
+@import '../../../styles/variables';
+
+.formatted-price {
+  display: inline-block;
+  color: #d49840;
+  background-color: transparent;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  transition: 0.2s;
+  width: auto;
+  position: relative;
+
+  .smallPrice {
+    float: right;
+    font-size: 0.6em;
+    padding-left: 2.5px;
+  }
+}

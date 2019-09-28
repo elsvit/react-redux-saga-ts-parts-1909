@@ -1,0 +1,77 @@
+@mixin breakpoint($breakpoint) {
+  @media screen and (max-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin breakpoint-min($breakpoint) {
+  @media screen and (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin placeholder() {
+  &::-webkit-input-placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    @content;
+  }
+  &:-moz-placeholder {
+    @content;
+  }
+  &:-ms-input-placeholder {
+    @content;
+  }
+}
+
+@mixin clearfix() {
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin align-img-center() {
+  background-position: center center;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+//------------font-face-----------------------
+@mixin font($name, $nameInFolder, $weight: 'regular', $style: normal) {
+  $dist: '../fonts/' + $nameInFolder;
+
+  @font-face {
+    font-family: $name;
+    src: url('#{$dist}.eot');
+    src: url('#{$dist}.eot?#iefix') format('embedded-opentype'), url('#{$dist}.woff') format('woff'),
+      url('#{$dist}.ttf') format('truetype'), url('#{$dist}.svg') format('svg');
+  }
+
+  @if $weight == 'thin' {
+    font-weight: 100;
+  } @else if $weight == 'extralight' or $weight == 'ultralight' {
+    font-weight: 200;
+  } @else if $weight == 'light' {
+    font-weight: 300;
+  } @else if $weight == 'normal' or $weight == 'book' or $weight == 'regular' {
+    font-weight: 400;
+  } @else if $weight == 'medium' {
+    font-weight: 500;
+  } @else if $weight == 'semibold' or $weight == 'demibold' {
+    font-weight: 600;
+  } @else if $weight == 'bold' {
+    font-weight: 700;
+  } @else if $weight == 'extrabold' or $weight == 'ultrabold' {
+    font-weight: 800;
+  } @else if $weight == 'heavy' or $weight == 'black' or $weight == 'super' {
+    font-weight: 900;
+  } @else {
+    font-weight: $weight;
+
+    font-style: $style;
+  }
+}

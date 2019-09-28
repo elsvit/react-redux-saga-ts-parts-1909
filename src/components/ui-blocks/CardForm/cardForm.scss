@@ -1,0 +1,71 @@
+@import '../../../styles/variables';
+
+.card-form {
+  min-width: 160px;
+  min-height: 128px;
+  padding: 12px;
+  background-color: $white;
+  color: $gray;
+  margin: 0 auto;
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+  box-sizing: border-box;
+  position: relative;
+
+  .card-form-title {
+    color: $lightBlack;
+    height: 24px;
+  }
+
+  .card-form-icons {
+    display: flex;
+    justify-content: flex-end;
+
+    > svg {
+      width: 32px;
+      height: 24px;
+      margin: 0 0 0 4px;
+    }
+  }
+
+  .card-form-text {
+    color: $gray;
+    font-size: 12px;
+  }
+
+  &.selected {
+    border: 2px solid $orange;
+  }
+
+  .credit-card-input-title {
+    margin-top: 16px;
+    font-size: 9px;
+    color: $lightBlack;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .credit-card-input {
+    display: flex;
+    flex: 1;
+    margin-top: 4px;
+    position: relative;
+    border: none;
+
+    > input {
+      width: 100%;
+      color: $lightBlack;
+      font-size: 12px;
+      border: 1px solid #dddddd;
+      border-radius: 2px;
+      padding: 8px 8px;
+    }
+
+    &.error {
+      > input {
+        border-color: $red;
+      }
+    }
+  }
+}
